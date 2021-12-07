@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond:wght@600;700&family=Mate+SC&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/finalization_site/finalization.css">
+    <link rel="stylesheet" href="./css/finalization_site/sliding_menu.css">
+    <link rel="stylesheet" href="./css/finalization_site/rune-sliders.css">
+    <link rel="stylesheet" href="./css/finalization_site/profession-sliders.css">
+    <link rel="stylesheet" href="./css/finalization_site/orb-sliders.css">
+    <link rel="stylesheet" href="./css/finalization_site/trait-sliders.css">
+    <link rel="stylesheet" href="./css/finalization_site/finalization-mobile.css">
+    <link rel="stylesheet" href="./css/finalization_site/sliders_mobile.css">
+    <link rel="stylesheet" href="./css/finalization_site/sliding_menu_mobile.css">
+    <link rel="stylesheet" href="./css/finalization_site/progress_bar.css">
+    <link rel="stylesheet" href="./css/finalization_site/footer.css">
+    <script src="https://kit.fontawesome.com/ea6b6e49d1.js" crossorigin="anonymous"></script>
+    
+    <title>Champion Fight</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="greeting">
+                <h3>Hello recruit! Choose your perks now.</h3>
+            </div>
+            <div class="infos">
+                <div class="current-champion">
+                    <div class="about-champion">
+                        <h3 class="champion-name"></h3>
+                        <h4 class="champion-fraction"></h4>
+                    </div>
+                    <div class="profession-miniature profession-miniature-hidden">
+                        <img src="finalization_img/miniatures/prof-miniature.svg" alt="profession-icon">
+                        <h4 class="miniature-prof-text"></h4>
+                    </div>
+                </div>
+                <div class="champion-portrait" id="toggle-menu">
+                    <div class="portrait-icon">
+                        <i class="fas fa-portrait" id="champ-icon"></i>
+                    </div>
+                    <div class="arrows-icon menu-arrows">
+                        <i class="fas fa-angle-double-left"></i>
+                    </div>
+                </div>
+                <div class="champion-details" id="champion-menu" data-hidden="yes">
+                    <div class="attributes-container">
+                        <div class="attributes-basic">
+                            <h3 class="attr-basic-header">Basics:</h3>
+                        </div>
+                        <div class="attributes-special">
+                            <h3 class="attr-special-header">Special:</h3>
+                        </div>
+                        <button class="stats-back-btn">Hide</button>
+                    </div>
+                    <div class="button-stats-container">
+                        <button class="show-stats-media-btn">See stats<i class="fas fa-server"></i></button>
+                    </div>
+                    <div class="trait-menu">
+                        <div class="trait-info">
+                            <button class="trait-info-btn">Select your trait!</button>
+                        </div>
+                        <div class="trait-details trait-details-hidden">
+                            <h4 class="trait-name-menu"></h4>
+                            <h3 class="trait-sentence-menu"></h3>
+                            <div class="trait-skills">
+                                <h5 class="trait-speech trait-skill">Speech Skills<span class="speech-value"></span></h5>
+                                <h5 class="trait-wisdom trait-skill">Wisdom<span class="wisdom-value"></span></h5>
+                                <h5 class="trait-barter trait-skill">Barter Skills<span class="barter-value"></span></h5>
+                                <h5 class="trait-respect trait-skill">Respect<span class="respect-value"></span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <h3 class="items-header">ITEMS</h3>
+                        <div class="rune-bonus">
+                            <div class="rune-info">
+                                <button class="rune-info-btn">Select your rune!</button>
+                            </div>
+                            <div class="rune-bonus-details rune-bonus-details-hidden">
+                                <h4 class="rune-name-menu"></h4>
+                                <div class="bonus-details"></div>
+                            </div>
+                        </div>
+                        <div class="orb-bonus">
+                            <div class="orb-info">
+                                <button class="orb-info-btn">Select your orb!</button>
+                            </div>
+                            <div class="orb-bonus-details orb-bonus-details-hidden">
+                                <h4 class="orb-name-menu"></h4>
+                                <h4 class="orb-bonus-text-menu"></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hp">hp</div>
+                    <div class="mana">mana</div>
+                </div>
+            </div>
+        </header>
+        <section class="choice-section sliders-container">
+            <div class="choice-content-wrapper">
+                <div class="content-btn-wrapper">
+                    <div class="runes-content-btn content-btn" data-selected="false">
+                        <h3 class="rune-box-header">Select your rune</h3>
+                    </div>
+                    <div class="professions-content-btn content-btn" data-selected="false">
+                        <h3 class="profession-box-header">Select your profession</h3>
+                        <h4 class="prof-header-detail"></h4>
+                    </div>
+                    <div class="orb-content-btn content-btn" data-selected="false">
+                        <h3 class="orb-box-header">Select your orb</h3>
+                    </div>
+                    <div class="trait-content-btn content-btn" data-selected="false">
+                        <h3 class="trait-box-header">Choose your trait</h3>
+                        <h5 id="trait-sentence"></h5>
+                    </div>
+                </div>
+                <section class="progress">
+                    <div class="progress-bar-container">
+                        <div class="moving-bar" style="width: 0%">
+                        <h3 class="progress-value"></h3>
+                    </div>
+                    </div>
+                </section>
+            </div>
+            <div class="slide-wrapper-runes rune-slider">
+                <div class="rune-x-toggler">
+                    <div class="rune-x-lines"></div>
+                </div>
+                <div class="rune-slide first current-rune" id="life-rune-slide">
+                    <div class="img-container">
+                        <img src="finalization_img/runes/life-rune.png" alt="life rune" width="200" height="200" class="rune-img slider-img">
+                    </div>
+                    <div class="rune-text-content life-rune">
+                        <h3 class="rune-of-life-header rune-header">Rune of Life</h3>
+                        <p class="life-rune-text rune-text">
+                        </p>
+                    </div>
+                    <button id="life-rune-apply-btn" class="rune-btn"  data-rune="life-rune">Pick Rune</button>
+                </div>
+                <div class="rune-slide" id="elements-rune-slide">
+                    <div class="img-container" id="elements-rune-slide">
+                        <img src="finalization_img/runes/elements-rune.png" alt="elements rune" width="200" height="200" class="rune-img slider-img">
+                    </div>
+                    <div class="rune-text-content elements-rune">
+                        <h3 class="rune-of-elements-header rune-header">Rune of Elements</h3>
+                        <p class="elements-rune-text rune-text">
+                        </p>
+                    </div>
+                    <button id="elements-rune-apply-btn" class="rune-btn" data-rune="elements-rune">Pick Rune</button>
+                </div>
+                <div class="rune-slide" id="nature-rune-slide">
+                    <div class="img-container">
+                        <img src="finalization_img/runes/nature-rune.png" alt="nature rune" width="200" height="200" class="rune-img slider-img">
+                    </div>
+                    <div class="rune-text-content nature-rune">
+                        <h3 class="rune-of-nature-header rune-header">Rune of Nature</h3>
+                        <p class="nature-rune-text rune-text">
+                        </p>
+                    </div>
+                    <button id="nature-rune-apply-btn" class="rune-btn" data-rune="nature-rune">Pick Rune</button>
+                </div>
+                <div class="rune-slide" id="shadows-rune-slide">
+                    <div class="img-container">
+                        <img src="finalization_img/runes/shadows-rune.png" alt="shadows rune" width="200" height="200" class="rune-img slider-img">
+                    </div>
+                    <div class="rune-text-content shadows-rune">
+                        <h3 class="rune-of-shadows-header rune-header">Rune of Shadows</h3>
+                        <p class="shadows-rune-text rune-text">
+                        </p>
+                    </div>
+                    <button id="shadows-rune-apply-btn" class="rune-btn" data-rune="shadows-rune">Pick Rune</button>
+                </div>
+                <div class="rune-slide" id="mentality-rune-slide">
+                    <div class="img-container">
+                        <img src="finalization_img/runes/mentality-rune.png" alt="mentality rune" width="200" height="200" class="rune-img slider-img">
+                    </div>
+                    <div class="rune-text-content mentality-rune">
+                        <h3 class="rune-of-mentality-header rune-header">Rune of Mentality</h3>
+                        <p class="mentality-rune-text rune-text">
+                        </p>
+                    </div>
+                    <button id="mentality-rune-apply-btn" class="rune-btn" data-rune="mentality-rune">Pick Rune</button>
+                </div>
+                <div class="rune-slide last" id="darkness-rune-slide">
+                    <div class="img-container">
+                        <img src="finalization_img/runes/darkness-rune.png" alt="darkness rune" width="200" height="200" class="rune-img slider-img">
+                    </div>
+                    <div class="rune-text-content darkness-rune">
+                        <h3 class="rune-of-darkness-header rune-header">Rune of Darkness</h3>
+                        <p class="darkness-rune-text rune-text">
+                        </p>
+                    </div>
+                    <button id="darkness-rune-apply-btn" class="rune-btn" data-rune="darkness-rune">Pick Rune</button>
+                </div>
+                <div class="rune-buttons">
+                <button id="prev-rune"><i class="fas fa-chevron-left"></i></button>
+                <button id="next-rune"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+        <section class="profession-section">
+            <div class="profession-slider">
+                <div class="profession-x-toggler">
+                    <div class="profession-x-lines"></div>
+                </div>
+                <div class="profession-slide" id="blacksmithing-profession-slide">
+                    <h3 class="blacksmithing-header profession-header">Blacksmithing</h3>
+                    <div class="prof-arrows" id="blacksmithing-arrows">
+                        <i class="fas fa-angle-double-right"></i>
+                    </div>
+                    <div class="prof-dots" id="blacksmithing-dots">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="prof-text-container">
+                        <p class="blacksmithing-text profession-text">
+                        </p>
+                    </div>
+                    <button class="prof-btn" id="blacksmithing-btn"><i class="fas fa-check-square"></i></button>
+                </div>
+                <div class="profession-slide" id="armorsmith-profession-slide">
+                    <h3 class="armorsmith-header profession-header">Armorsmith</h3>
+                    <div class="prof-arrows" id="armorsmith-arrows">
+                        <i class="fas fa-angle-double-right"></i>
+                    </div>
+                    <div class="prof-dots" id="armorsmith-dots">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="prof-text-container">
+                        <p class="armorsmith-text profession-text">
+                        </p>
+                    </div>
+                    <button class="prof-btn" id="armorsmith-btn" ><i class="fas fa-check-square"></i></button>
+                </div>
+                <div class="profession-slide" id="huntsman-profession-slide">
+                    <h3 class="huntsman-header profession-header">Huntsman</h3>
+                    <div class="prof-arrows" id="huntsman-arrows">
+                        <i class="fas fa-angle-double-right"></i>
+                    </div>
+                    <div class="prof-dots" id="huntsman-dots">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="prof-text-container">
+                        <p class="huntsman-text profession-text">
+                        </p>
+                    </div>
+                    <button class="prof-btn" id="huntsman-btn" ><i class="fas fa-check-square"></i></button>
+                </div>
+                <div class="profession-slide" id="leatherworking-profession-slide">
+                    <h3 class="leatherworking-header profession-header">Leatherworking</h3>
+                    <div class="prof-arrows" id="leatherworking-arrows">
+                        <i class="fas fa-angle-double-right"></i>
+                    </div>
+                    <div class="prof-dots" id="leatherworking-dots">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="prof-text-container">
+                        <p class="leatherworking-text profession-text">
+                        </p>
+                    </div>
+                    <button class="prof-btn" id="leatherworking-btn" ><i class="fas fa-check-square"></i></button>
+                </div>
+                <div class="profession-slide" id="jewellery-profession-slide">
+                    <h3 class="jewellery-header profession-header">Jewellery</h3>
+                    <div class="prof-arrows" id="jewellery-arrows">
+                        <i class="fas fa-angle-double-right"></i>
+                    </div>
+                    <div class="prof-dots" id="jewellery-dots">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="prof-text-container">
+                        <p class="jewellery-text profession-text">
+                        </p>
+                    </div>
+                    <button class="prof-btn" id="jewellery-btn"><i class="fas fa-check-square"></i></button>
+                </div>
+                <div class="profession-slide" id="alchemy-profession-slide">
+                    <h3 class="alchemy-header profession-header">Alchemy</h3>
+                    <div class="prof-arrows" id="alchemy-arrows">
+                        <i class="fas fa-angle-double-right"></i>
+                    </div>
+                    <div class="prof-dots" id="alchemy-dots">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="prof-text-container">
+                        <p class="alchemy-text profession-text">
+                        </p>
+                    </div>
+                    <button class="prof-btn" id="alchemy-btn"><i class="fas fa-check-square"></i></button>
+                </div>
+                <div class="prof-details-media">
+                    <p class="prof-media-text"></p>
+                    <button id="media-profession-btn">Select</button>
+                    <div class="back-btn-media">
+                        <i class="fas fa-undo-alt"></i>
+                    </div>
+                </div>
+                <!-- <div class="prof-buttons">
+                <button id="prev-prof"><i class="fas fa-chevron-left"></i></button>
+                <button id="next-prof"><i class="fas fa-chevron-right"></i></button>
+                </div> -->
+
+            </div>
+        </section>
+        <section class="orb-section">
+            <div class="orb-slider">
+                <div class="orb-x-toggler">
+                    <div class="orb-x-lines"></div>
+                </div>
+                <div class="orb-slide" id="luck-orb-slide">
+                    <div class="orb-img-container">
+                        <img src="finalization_img/orbs/luck-orb.png" alt="orb of luck" width="160" height="160" class="orb-img luck-img">
+                    </div>
+                    <div class="orb-content luck-orb-content">
+                        <h3 class="luck-header orb-header">Orb of Luck</h3>
+                        <p class="luck-orb-text orb-text">
+                            
+                        </p>
+                        <button class="orb-btn" id="luck-orb-btn">Take it!</button>
+                    </div>
+                </div>
+                <div class="orb-slide" id="knowledge-orb-slide">
+                    <div class="orb-img-container">
+                        <img src="finalization_img/orbs/experience-orb.png" alt="orb of knowledge" width="160" height="160" class="orb-img knowledge-img">
+                    </div>
+                    <div class="orb-content knowledge-orb-content">
+                        <h3 class="knowledge-header orb-header">Orb of knowledge</h3>
+                        <p class="knowledge-orb-text orb-text">
+                        </p>
+                        <button class="orb-btn" id="knowledge-orb-btn">Take it!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="trait-section">
+            <div class="trait-slider">
+                <div class="trait-x-toggler">
+                    <div class="trait-x-lines"></div>
+                </div>
+                <div class="trait-slide" id="wop-trait-slide">
+                    <h2 class="wop-header trait-header">Words of Power</h2>
+                    <p class="wop-text trait-text">
+                    </p>
+                    <button id="wop-dots" class="trait-dots"><i class="fas fa-ellipsis-v"></i></button>
+                    <div class="wop-trait-stats trait-stats"></div>
+                    <button id="wop-apply-btn" class="trait-btn"  data-trait="wop-trait"><i class="fas fa-check-square trait-apply-icon" id="wop-apply-icon"></i><h5 class="trait-btn-header">Take it !</h5></button>
+
+                </div>
+                <div class="trait-slide" id="mor-trait-slide">
+                    <h2 class="mor-header trait-header">Man of Renaissance</h2>
+                    <p class="mor-text trait-text">
+                    </p>
+                    <button id="mor-dots" class="trait-dots"><i class="fas fa-ellipsis-v"></i></button>
+                    <div class="mor-trait-stats trait-stats"></div>
+                    <button id="mor-apply-btn" class="trait-btn"  data-rune="mor-trait"><i class="fas fa-check-square trait-apply-icon" id="mor-apply-icon"></i><h5 class="trait-btn-header">Take it !</h5></button>
+                </div>
+                <div class="trait-slide" id="fov-trait-slide">
+                    <h2 class="fov-header trait-header">Friend of Vendors</h2>
+                    <p class="fov-text trait-text">
+                    </p>
+                    <button id="fov-dots" class="trait-dots"><i class="fas fa-ellipsis-v"></i></button>
+                    <div class="fov-trait-stats trait-stats"></div>
+                    <button id="fov-apply-btn" class="trait-btn"  data-rune="fov-trait"><i class="fas fa-check-square trait-apply-icon" id="fov-apply-icon"></i><h5 class="trait-btn-header">Take it !</h5></button>
+                </div>
+                <div class="trait-slide" id="agt-trait-slide">
+                    <h2 class="agt-header trait-header">A Globetrotter</h2>
+                    <p class="agt-text trait-text">
+                    </p>
+                    <button id="agt-dots" class="trait-dots"><i class="fas fa-ellipsis-v"></i></button>
+                    <div class="agt-trait-stats trait-stats"></div>
+                    <button id="agt-apply-btn" class="trait-btn"  data-rune="agt-trait"><i class="fas fa-check-square trait-apply-icon" id="agt-apply-icon"></i><h5 class="trait-btn-header">Take it !</h5></button>
+                </div>
+                <div class="trait-details-media">
+                    <p class="trait-text-media"></p>
+                    <button id="apply-trait-btn-media">Select</button>
+                    <div class="back-btn-trait-media">
+                        <i class="fas fa-undo-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="confirmation">
+            <button class="confirm-btn"> CONFIRM </button>
+        </section>
+        <footer class="footer">
+            <h5 class="copyright">&copy; Copyright, erracompany 2021</h5>
+            <div class="contact">
+                <h5 class="contact">erra@mail.com</h5>
+            </div>
+            <div class="socials">
+                <a href="https://www.facebook.com/" target="blank" class="fb social"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/" target="blank" class="git social"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/" target="blank" class="twitter social"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="site-finalization.js"></script>
+    <script type="module" src="runes-slider.js"></script>
+    <script type="module" src="professions-slider.js"></script>
+    <script type="module" src="orbs-slider.js"></script>
+    <script type="module" src="traits-slider.js"></script>
+    <script type="module" src="progress.js"></script>
+</body>
+</html>

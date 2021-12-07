@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow-x: hidden;
+}
+:root{
+    --main-font-color-light: rgb(214, 214, 214);
+    --main-font-color-dark: rgb(34, 34, 34);
+    --main-background-color-dark-transparent:rgba(35, 30, 35, 0.3);
+    --main-background-color-darker-transparent:rgba(25, 20, 25, 0.5);
+    --main-background-color-superdarker-transparent: rgba(15, 10, 15, 0.8);
+    --main-background-color-lightgrey-transparent: rgba(222, 238, 234, 0.349);
+    --main-background-color-lightgrey-semitransparent:rgba(222, 238, 234, 0.9);
+    --main-light: rgb(222,238,234);
+    --main-dark: rgb(35,30,35);
+    --main-background-color-lightgrey-darker-semitransparent:rgba(170, 169, 169, 0.8);
+    --main-font-color-possitive: rgb(0, 175, 67);
+    --main-font-color-negative: rgb(214, 52, 52);
+    --main-pastel-sea-color: rgb(57, 166, 163);
+    --main-pastel-violet-color:rgb(191,19,99);
+    --main-pastel-yelwierd-color: #F9F871;
+
+    --main-text-font: 'Cinzel', serif;
+    --main-plain-text-font: 'Playfair Display SC', serif;
+}
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:url("https://gr34ter.github.io/erraland/public/finalization_img/bg/DivReach.jpg") no-repeat center;
+    background-size: cover;
+}
+/* Header NAV */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    min-height: 10vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-background-color-lightgrey-semitransparent);
+    color: var(--main-font-color-dark);
+    padding: 0 .5rem 0 .5rem;
+    z-index: 3;
+}
+.greeting{
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.infos{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: solid 2px var(--main-pastel-sea-color);
+
+}
+.current-champion{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-left: 1rem;
+}
+.about-champion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+}
+.profession-miniature{
+    min-width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.profession-miniature img{
+    width: 40px;
+    height: 40px;
+}
+.profession-miniature img:hover{
+    cursor: pointer;
+}
+.profession-miniature-hidden{
+    display: none;
+}
+.miniature-prof-text{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    color: var(--main-light);
+    background-color: var(--main-dark);
+    height: 3rem;
+    padding: 5px;
+    border: 1px solid #fff;
+    top: 3.5rem;
+    right: 2rem;
+    transition: all 1s ease;
+}
+
+.miniature-prof-text-active{
+    opacity: 1;
+    display: block;
+}
+
+.champion-portrait{
+    display: flex;
+    min-width: 20%;
+    justify-content: flex-end;
+    align-content: center;
+    padding: .4rem;
+    border-radius: 3px;
+    background-color: var(--main-pastel-sea-color);
+    color: rgb(87, 87, 87);
+    transition: all .2s ease;
+}
+.champion-portrait-news{
+    color: #ee3e3e;
+    background-color: transparent;
+    animation: news 2s infinite;
+}
+.portrait-icon{
+    flex: 2;
+    font-size: 2.2rem;
+    color: #fff;
+}
+.arrows-icon{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    width: 3rem;
+}
+.champion-portrait:hover{
+    cursor: pointer;
+}
+.champion-portrait:hover .arrows-icon{
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+/* Choice Section  */
+.choice-section{
+    min-height: 50%;
+    width: 100%;
+    margin-top: 10vh;
+}
+.choice-content-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.content-btn-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100%;
+}
+.content-btn{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-background-color-darker-transparent);
+    border: 1px solid #fff;
+    padding: .5rem;
+    border-radius: 5px;
+    min-width: 22%;
+    min-height: 30%;
+    letter-spacing: 2px;
+    transition: all .2s ease;
+}
+.content-btn:hover{
+    cursor: pointer;
+    border: var(--main-pastel-sea-color) 1px solid;
+    background-color: var(--main-background-color-lightgrey-semitransparent);
+    color: var(--main-dark);
+    transform: scale(1.075);
+}
+.content-btn-choosed{
+    background-color: var(--main-background-color-superdarker-transparent);
+    color: #F9F871;
+    border: var(--main-pastel-yelwierd-color) 2px solid;
+}
+.content-btn h4{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.confirmation {
+    width: 100%;
+    min-height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm-btn{
+    width: 20%;
+    height: 4rem;
+    position: relative;
+    border: 2px solid var(--main-light);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    overflow: hidden;
+    background-color: var(--main-background-color-darker-transparent);
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 0;
+    opacity: 0;
+    font-family: inherit;
+    color: var(--main-light);
+    transition: all 1s ease;
+    display: none;
+}
+.confirm-btn-active{
+    opacity: 1;
+    display: block;
+}
+.confirm-btn::before {
+    content: '';
+    width: 0;
+    height: 500%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: var(--main-pastel-sea-color);
+    transition: all .5s ease;
+    display: block;
+    z-index: -1;
+}
+.confirm-btn:hover::before {
+    width: 105%;
+}
+.confirm-btn:hover {
+    letter-spacing: 4px;
+    cursor: pointer;
+    color: #fff;
+}
+@keyframes news {
+    0% { color: #ee3e3e; border: none;}
+    50% { color: #fff; border: none; background-color: #ee3e3e;}
+    100% { color: #ee3e3e; border: none;}
+}

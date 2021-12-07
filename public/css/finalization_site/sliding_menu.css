@@ -1,0 +1,310 @@
+.champion-details{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 15vh;
+    height: 100vh;
+    border-radius: 2px;
+    padding: .8rem;
+    padding-top: 5px;
+    background-color: rgba(0, 0, 0, 0.97);
+    /* overflow-y: hidden; */
+    transform: translateX(100%);
+    transition: ease-in .2s;
+}
+
+.champion-details-active{
+    transform: translateX(0%);
+}
+.trait-menu{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 25%;
+    border-bottom: 2px solid var(--main-pastel-sea-color);
+}
+.trait-info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trait-info-hidden{
+    display: none;
+}
+.trait-info-btn,
+.rune-info-btn,
+.orb-info-btn{
+    width: 50%;
+    letter-spacing: 2.5px;
+    background: linear-gradient(-45deg, #00443b, #00e9af, #00b6a4, #00aa80);
+    background-size: 800% 400%;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 2px;
+    font-weight: 700;
+    color: white;
+    transition: all .5s ease-in-out;
+    animation: info-btn 2.5s infinite cubic-bezier(.62, .28, .23, .99) both;
+}
+
+.trait-info-btn:hover,
+.orb-info-btn:hover, 
+.rune-info-btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+   
+.trait-info-btn:active 
+.rune-info-btn:active 
+.orb-info-btn:active {
+    animation: info-btn 3s infinite;
+    transform: scale(0.8);
+}
+.trait-details{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.trait-details-hidden{
+    display: none;
+}
+.trait-name-menu{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--main-font-color-light);
+    background-color: rgba(4, 119, 108, 0.233);
+
+}
+.trait-sentence-menu{
+    color: var(--main-pastel-violet-color);
+}
+.trait-skills{
+    display: flex;
+    width: 100%;
+    padding: .6rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.trait-skill{
+    display: flex;
+    flex-wrap: nowrap;
+    color: #fff;
+}
+.trait-negative{
+    color: var(--main-font-color-negative);
+}
+.trait-positive{
+    color: var(--main-font-color-possitive);
+}
+.attributes-container{
+    display: flex;
+    min-height: fit-content;
+    width: 100%;
+    border-bottom: 2px solid var(--main-pastel-sea-color);
+}
+.attributes-basic,
+.attributes-special{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 45%;
+    color: #ddd;
+}
+.attr-special-header,
+.attr-basic-header{
+    width: 100%;
+    padding: 3px;
+    /* background-color: var(--main-background-color-lightgrey-semitransparent); */
+    color: var(--main-pastel-yelwierd-color);
+}
+.attributes-basic h5, 
+.attributes-special h5,
+.attributes-basic h4,
+.attributes-special h4{
+    padding: .2rem;
+
+}
+.basic-attribute,
+.spec-attribute{
+    text-transform: uppercase;
+    display: flex;
+    width: 100%;
+    font-size: 1rem;
+}
+.basic-attribute-name,
+.spec-attribute-name{
+    display: flex;
+    align-content: center;
+    min-width: 70%;
+}
+.basic-attribute-value,
+.spec-attribute-value{
+    align-content: center;
+    justify-content: flex-start;
+    width: 30%;
+
+}
+.items{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.items .items-header{
+    min-height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5rem;
+    min-width: 100%;
+    color: #fff;
+    background-color: rgba(4, 119, 108, 0.233);
+
+}
+.bonus-header{
+    text-transform: uppercase;
+    color: var(--main-pastel-violet-color);
+}
+.rune-bonus{
+    height: 80%;
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rune-name-menu{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.rune-bonus-details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bonus-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.orb-bonus{
+    height: 80%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rune-info,
+.orb-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.orb-info-hidden,
+.rune-info-hidden{
+    display: none;
+}
+.orb-info-btn,
+.rune-info-btn{
+    width: 80%;
+}
+.orb-bonus-details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.orb-name-menu{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.orb-bonus-text-menu{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    color: var(--main-pastel-yelwierd-color);
+}
+.rune-bonus-details-hidden,
+.orb-bonus-details-hidden{
+    display: none;
+}
+.mana, 
+.hp {
+    width: 50%;
+    position: absolute;
+    height: 2rem;
+    color: var(--main-font-color-light);
+    text-align: center;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid var(--main-pastel-sea-color);
+
+}
+.mana{
+    background-color: rgb(24, 68, 126);
+    top:-2rem;
+    right: 0;
+}
+.hp{
+    background-color: rgb(151, 32, 56);
+    top:-2rem;
+    left: 0;
+}
+.arrows-icon-active{
+    color: #fff;
+    transition: transform ease-in 0.2s;
+    transform:rotateY(180deg);
+}
+.arrows-icon-inactive{
+    transition: transform ease in 0.2s;
+    transform: rotateY(-180deg);
+}
+.button-stats-container{
+    display: none;
+}
+.stats-back-btn{
+    display: none;
+}
+@keyframes info-btn {
+    0% {
+     background-position: 0% 50%;
+    }
+   
+    50% {
+     background-position: 100% 50%;
+    }
+   
+    100% {
+     background-position: 0% 50%;
+    }
+   }

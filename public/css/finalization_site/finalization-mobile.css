@@ -1,0 +1,38 @@
+
+@media only screen and (max-width: 920px){
+    .current-champion{
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .infos{
+        font-size: 1rem;
+    }
+    .choice-content-wrapper{
+        padding-top: 6rem;
+        flex-direction: column;
+    }
+
+}
+@media (max-width: 500px) {
+    .choice-content-wrapper{
+        justify-content: stretch;
+    }
+    .greeting{
+        display: none;
+    }
+    .infos{
+        width: 100%;
+    }
+    header{
+        min-height: 8vh;
+    }
+}
+@media (max-width:400px) {
+    .copyright{
+        font-size: .7rem;
+    }
+    .contact h5{
+        margin: 0;
+        padding-left: 0px;
+    }
+}

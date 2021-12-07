@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ea6b6e49d1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond:wght@600;700&family=Mate+SC&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fraction_site/fractions.css">
+    <link rel="stylesheet" href="./css/fraction_site/champion_form.css">
+    <link rel="stylesheet" href="./css/fraction_site/fraction_divs_styles.css">
+    <link rel="stylesheet" href="./css/finalization_site/footer.css">
+    <link rel="stylesheet" href="./css/fraction_site/fractions_mobile.css">
+
+    <title>Champion Fight</title>
+</head>
+<body>
+    <div class="fractions-container" data-bgtracker="none">
+        <header class="header">
+            <div class="section-header">
+                <h3>Hello Recruit!</h3>
+            </div>
+            <div class="site-description-container">
+                <p class="site-descr">
+                    NOW YOU ARE ABLE TO SELECT A FRACTION
+                    <BR></BR> 
+                    <span class="descr-attention">
+                        READ EEVRYTHING CAREFULLY.
+                        PICKING A RIGHT FRACTION, WILL AFFECT EVERY DETAIL OF YOUR JOURNEY.
+                        YOU GONNA HAVE TO ADD SOME ATRIBUTES AS WELL. PAY ATTENTION TO THIS.
+                    </span>
+                    <BR></BR> 
+                    <span class="descr-warn">TO SEE MORE DETAILS CLICK ON THE ICONS.</span>
+                </p>
+            </div>
+        </header>
+        <main>
+            <section class="champion champion-hidden">
+                <div class="flex-header">
+                    <h3 class="header-fraction-name"></h3>
+                    <div class="fraction-details">
+                        <div class="details-image-container">
+                            <img src="#" alt="" id="fraction-header-image">
+                        </div>
+                        <div class="fraction-description-container">
+                            <p class="fraction-description"></p>
+                        </div>  
+                    </div>
+                </div>
+                <form action="finalization.html" class="champion-attributes">
+                    <div class="submit-container points-left-container">
+                        <div class="fraction-points">
+                            <p>POINTS LEFT:</p>
+                            <p class="points-left-value"></p>
+                        </div>
+                        <div class="name-container">
+                            <input type="text" name="Name" id="name"  autocomplete="off" required>
+                            <label for="name" class="name-label">
+                                <span class="content-name">Name:</span>
+                            </label>
+                        </div>
+                        <input type="submit" value="Continue" id="submit" class="submit-btn" disabled>
+                    </div>
+                    <div class="rows-container">
+                        <div class="attribute-row">
+                            <div class="values-flex-container">
+                                <p class="strength-value attribute-value" id="strength-output"></p>
+                                <h5 class="attribute-name">strength</h5>
+                                <div class="attribute-description-mark">
+                                    <p><i class="far fa-question-circle"></i></p>   
+                                </div>
+                                <p class="max-value"></p>
+                            </div>
+                            <div class="slider-flex-container">
+                                <button class="button-attrdown" data-buttonname="strength-down" disabled> - </button>
+                                <input type="range" name="strength" id="strength" class="attribute-slider" min="#" value="#" max="#" disabled>
+                                <button class="button-attrup" data-buttonname="strength-up"> + </button>
+                            </div>
+                        </div>
+                        <div class="attribute-row">
+                            <div class="values-flex-container">
+                                <p class="agility-value attribute-value" id="agility-output"></p>
+                                <h5 class="attribute-name">agility</h5>
+                                <div class="attribute-description-mark">
+                                    <p><i class="far fa-question-circle"></i></p>   
+                                </div>
+                                <p class="max-value"></p>
+                            </div>                            
+                            <div class="slider-flex-container">
+                                <button class="button-attrdown"  data-buttonname="agility-down" disabled> - </button>
+                                <input type="range" name="agility" id="agility" class="attribute-slider" min="#" value="#" max="#" disabled>
+                                <button class="button-attrup" data-buttonname="agility-up"> + </button>
+                            </div>
+                        </div>
+                        <div class="attribute-row">
+                            <div class="values-flex-container">
+                                <p class="vitality-value attribute-value" id="vitality-output"></p>    
+                                <h5 class="attribute-name">vitality</h5>
+                                <div class="attribute-description-mark">
+                                    <p><i class="far fa-question-circle"></i></p>   
+                                </div>
+                                <p class="max-value"></p>
+                            </div>
+                            <div class="slider-flex-container">
+                                <button class="button-attrdown" data-buttonname="vitality-down" disabled> - </button>
+                                <input type="range" name="vitality" id="vitality" class="attribute-slider" min="#" value="#" max="#" disabled>
+                                <button class="button-attrup" data-buttonname="vitality-up"> + </button>
+                            </div>
+                        </div>
+                        <div class="attribute-row">
+                            <div class="values-flex-container">
+                                <p class="intelligence-value attribute-value" id="intelligence-output"></p>
+                                <h5 class="attribute-name">intelligence</h5>
+                                <div class="attribute-description-mark">
+                                    <p><i class="far fa-question-circle"></i></p>   
+                                </div>
+                                <p class="max-value"></p>
+                            </div>                            
+                            <div class="slider-flex-container">
+                                <button class="button-attrdown" data-buttonname="intelligence-down" disabled> - </button>
+                                <input type="range" name="intelligence" id="intelligence" class="attribute-slider" min="#" value="#" max="#" disabled>
+                                <button class="button-attrup" data-buttonname="intelligence-up"> + </button>
+                            </div>
+                        </div>
+                        <div class="attribute-row">
+                            <div class="values-flex-container">
+                                <p class="awarness-value attribute-value" id="awarness-output"></p>
+                                <h5 class="attribute-name">awarness</h5>
+                                <div class="attribute-description-mark">
+                                    <p><i class="far fa-question-circle"></i></p>   
+                                </div>
+                                <p class="max-value"></p>
+                            </div>                            
+                            <div class="slider-flex-container">
+                                <button class="button-attrdown" data-buttonname="awarness-down" disabled> - </button>
+                                <input type="range" name="awarness" id="awarness" class="attribute-slider" min="#" value="#" max="#" disabled>
+                                <button class="button-attrup" data-buttonname="awarness-up" > + </button>
+                            </div>
+                        </div>
+                        <div class="attribute-row">
+                            <div class="values-flex-container">
+                                <p class="charisma-value attribute-value" id="charisma-output"></p>
+                                <h5 class="attribute-name">charisma</h5>
+                                <div class="attribute-description-mark">
+                                    <i class="far fa-question-circle"></i>  
+                                </div>
+                                <p class="max-value"></p>
+                            </div>                            
+                            <div class="slider-flex-container">
+                                <button class="button-attrdown" data-buttonname="charisma-down" disabled> - </button>
+                                <input type="range" name="charisma" id="charisma" class="attribute-slider" min="#" value="#" max="#" disabled>
+                                <button class="button-attrup" data-buttonname="charisma-up" > + </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="x-toggler">
+                        <div class="x-lines"></div>
+                    </div>
+                    <div class="attribute-description-container">
+                        <p class="attribute-text"></p>
+                        <div class="attribute-x-toggler">
+                            <div class="attribute-x-lines"></div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section class="fractions flex-container">
+                <div class="spiritmaster fraction" id="spiritmaster" data-fractionclass="Spiritmaster">
+                    <div class="img-container">
+                        <img src="fractions_img/prof/spiritmaster.png" alt="spiritmaster" id="spiritmaster-icon">
+                    </div>
+                    <h3 class="spiritmaster-fraction-name">SPIRIT MASTER</h3>
+                </div>
+                <div class="knight fraction" id="knight" data-fractionclass="Knight">
+                    <div class="img-container">
+                        <img src="fractions_img/prof/knight.png" alt="knight" id="knight-icon">
+                    </div>
+                    <h3 class="knight-fraction-name">KNIGHT</h3>
+                </div>
+                <div class="ranger fraction" id="ranger" data-fractionclass="Ranger">
+                    <div class="img-container">
+                        <img src="fractions_img/prof/ranger.png" alt="ranger" id="ranger-icon">
+                    </div>
+                    <h3 class="ranger-fraction-name">RANGER</h3>
+                </div>
+                <div class="assasin fraction" id="assasin" data-fractionclass="Assasin">
+                    <div class="img-container">
+                        <img src="fractions_img/prof/assasin.png" alt="assasin" id="assasin-icon">
+                    </div>
+                    <h3 class="assasin-fraction-name">ASSASIN</h3>
+                </div>
+                <div class="necromancy fraction" id="necromancy" data-fractionclass="necromancy">
+                    <div class="img-container">
+                        <img src="fractions_img/prof/necromancy.png" alt="necromancy" id="necromancy-icon">
+                    </div>
+                    <h3 class="necromancy-fraction-name">NECROMANCY</h3>
+                </div>
+                <div class="illusionist fraction" id="illusionist">
+                    <div class="img-container">
+                        <img src="fractions_img/prof/illusionist.png" alt="illusionist" id="illusionist-icon">
+                    </div>
+                    <h3 class="illusionist-fraction-name">ILLUSIONIST</h3>
+                </div>
+                <div class="attribute-description">
+                    <p class="attribute-text"></p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="footer">
+        <h5 class="copyright">&copy; Copyright, erracompany 2021</h5>
+        <div class="contact">
+            <h5 class="contact">erra@mail.com</h5>
+        </div>
+        <div class="socials">
+            <a href="https://www.facebook.com/" target="blank" class="fb social"><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/" target="blank" class="git social"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/" target="blank" class="twitter social"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <script type= "module" src="site-fractions.js"></script>
+</body>
+</html>

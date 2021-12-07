@@ -1,0 +1,216 @@
+.profession-slider{
+    position: fixed;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    top: 4rem;
+    left: 3rem;
+    right: 3rem;
+    bottom: 2rem;
+    background-color: var(--main-dark);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(0);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+.profession-slide{
+    width: 100%;
+    display: flex;
+    flex: 1;
+}
+.prof-details-media{
+    display: none;
+
+}
+.profession-header{
+    padding-right: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    background-color: var(--main-background-color-darker-transparent);
+}
+.profession-header:hover{
+    cursor: default;
+
+}
+.prof-arrows{
+    color: var(--main-pastel-violet-color);
+    background-color: var(--main-background-color-superdarker-transparent);
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+.prof-arrows:hover{
+    color: var(--main-pastel-sea-color);
+}
+.prof-dots{
+    display: none;
+}
+.prof-text-container{
+    background-color: var(--main-background-color-superdarker-transparent);
+    width: 65%;
+    overflow-x: hidden;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.profession-text{
+    width: 90%;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    height: 100%;
+    color: white;
+    padding: 0.5rem;
+    transform: translateX(-110%);
+    transition: transform 0.3s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.profession-text-active{
+    transform: translateX(0%);
+}
+.prof-btn{
+    min-width: 10%;
+    height: 100%;
+    font-size: 2.5rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: var(--main-background-color-superdarker-transparent);
+    justify-self: flex-end;
+    visibility: visible;
+    transform: translateX(200%);
+    transition: all .2s ease;
+}
+.prof-btn-active{
+    transform: translateX(0%);
+}
+.prof-btn:hover{
+    cursor: pointer;
+    color: var(--main-pastel-sea-color);
+}
+.profession-x-toggler{
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    border: 2px solid #fff;
+    background-color: rgba(250, 0, 137, 0.849);
+    height: 3rem;
+    width: 3rem;
+    padding: 0.4rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    transform: scale(0);
+    transition: all 0.5s ease;
+    visibility: hidden;
+}
+.profession-x-toggler > div {
+    position: relative;
+    background-color:#fff;
+    height: 2px;
+    width: 100%;
+    transform: rotate(45deg);
+    transition: all 0.2s ease;
+}
+.profession-x-toggler > div::before{
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    height: 2px;
+    width: 100%;
+    transform: rotate(90deg);
+    transition: all 0.2s ease;
+}
+.profession-x-toggler:hover .profession-x-lines{
+    transform: rotate(135deg);
+}
+
+.show-slider,
+.show-toggler{
+    visibility: visible;
+    transform: scale(1);
+}
+.hide-slider,
+.hide-toggler{
+    transform: scale(0);
+    visibility: hidden;
+    transition-duration: 0.2s;
+}
+#apply-trait-btn-media,
+#media-profession-btn{
+    width: 50%;
+    margin-top: 10%;
+    border: none;
+    border: 2px solid var(--main-pastel-sea-color);
+    height: 7%;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: var(--main-dark);
+    color: var(--main-pastel-sea-color);
+    transform: scale(1);
+    transition: all .2s ease;
+    
+}
+#apply-trait-btn-media:hover,
+#media-profession-btn:hover{
+    transform: scale(0.8);
+    background-color: var(--main-pastel-sea-color);
+    color: #fff;
+    cursor: pointer;
+}
+#armorsmith-profession-slide{
+    background-color: #2F2E26;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Cpath fill='none' stroke-width='9.2' id='a' d='M0-478l-413.96 717h827.92L0-478l-413.96 717h827.92z'/%3E%3C/defs%3E%3Cg style='transform-origin:center'%3E%3Cg transform='rotate(102 0 0)' style='transform-origin:center'%3E%3Cg transform='rotate(-107.2 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%2349458D' href='%23a' transform='rotate(-53.6 0 0) scale(0.464)'/%3E%3Cuse stroke='%23504288' href='%23a' transform='rotate(-46.9 0 0) scale(0.531)'/%3E%3Cuse stroke='%23564083' href='%23a' transform='rotate(-40.2 0 0) scale(0.598)'/%3E%3Cuse stroke='%235d3d7e' href='%23a' transform='rotate(-33.5 0 0) scale(0.665)'/%3E%3Cuse stroke='%23643a79' href='%23a' transform='rotate(-26.8 0 0) scale(0.732)'/%3E%3Cuse stroke='%236a3774' href='%23a' transform='rotate(-20.1 0 0) scale(0.799)'/%3E%3Cuse stroke='%2371356f' href='%23a' transform='rotate(-13.4 0 0) scale(0.866)'/%3E%3Cuse stroke='%2377326a' href='%23a' transform='rotate(-6.7 0 0) scale(0.933)'/%3E%3Cuse stroke='%237e2f65' href='%23a' transform=''/%3E%3Cuse stroke='%23852c60' href='%23a' transform='rotate(6.7 0 0) scale(1.067)'/%3E%3Cuse stroke='%238b2a5b' href='%23a' transform='rotate(13.4 0 0) scale(1.134)'/%3E%3Cuse stroke='%23922756' href='%23a' transform='rotate(20.1 0 0) scale(1.201)'/%3E%3Cuse stroke='%23992452' href='%23a' transform='rotate(26.8 0 0) scale(1.268)'/%3E%3Cuse stroke='%239f214d' href='%23a' transform='rotate(33.5 0 0) scale(1.335)'/%3E%3Cuse stroke='%23a61f48' href='%23a' transform='rotate(40.2 0 0) scale(1.402)'/%3E%3Cuse stroke='%23ac1c43' href='%23a' transform='rotate(46.9 0 0) scale(1.469)'/%3E%3Cuse stroke='%23b3193e' href='%23a' transform='rotate(53.6 0 0) scale(1.536)'/%3E%3Cuse stroke='%23ba1639' href='%23a' transform='rotate(60.3 0 0) scale(1.603)'/%3E%3Cuse stroke='%23c01434' href='%23a' transform='rotate(67 0 0) scale(1.67)'/%3E%3Cuse stroke='%23c7112f' href='%23a' transform='rotate(73.7 0 0) scale(1.737)'/%3E%3Cuse stroke='%23ce0e2a' href='%23a' transform='rotate(80.4 0 0) scale(1.804)'/%3E%3Cuse stroke='%23d40b25' href='%23a' transform='rotate(87.1 0 0) scale(1.871)'/%3E%3Cuse stroke='%23db0920' href='%23a' transform='rotate(93.8 0 0) scale(1.938)'/%3E%3Cuse stroke='%23e1061b' href='%23a' transform='rotate(100.5 0 0) scale(2.005)'/%3E%3Cuse stroke='%23E80316' href='%23a' transform='rotate(107.2 0 0) scale(2.072)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+#huntsman-profession-slide{
+    background-color: #383838fb;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Ccircle stroke='%234C6912' vector-effect='non-scaling-stroke' id='a' fill='none' stroke-width='3.6' r='315'/%3E%3Cuse id='f' href='%23a' stroke-dasharray='100 100 100 9999'/%3E%3Cuse id='b' href='%23a' stroke-dasharray='250 250 250 250 250 9999'/%3E%3Cuse id='e' href='%23a' stroke-dasharray='1000 500 1000 500 9999'/%3E%3Cuse id='g' href='%23a' stroke-dasharray='1500 9999'/%3E%3Cuse id='h' href='%23a' stroke-dasharray='2000 500 500 9999'/%3E%3Cuse id='j' href='%23a' stroke-dasharray='800 800 800 800 800 9999'/%3E%3Cuse id='k' href='%23a' stroke-dasharray='1200 1200 1200 1200 1200 9999'/%3E%3Cuse id='l' href='%23a' stroke-dasharray='1600 1600 1600 1600 1600 9999'/%3E%3C/defs%3E%3Cg transform='translate(1000 750)' %3E%3Cg transform='rotate(165.6 0 0)' %3E%3Ccircle fill='%234C6912' r='10'/%3E%3Cg transform='rotate(-165 0 0)'%3E%3Cuse href='%23f' transform='scale(.1) rotate(50 0 0)' /%3E%3Cuse href='%23f' transform='scale(.2) rotate(100 0 0)' /%3E%3Cuse href='%23f' transform='scale(.3) rotate(150 0 0)' /%3E%3C/g%3E%3Cg transform='rotate(-52.8 0 0)'%3E%3Cuse href='%23b' transform='scale(.4) rotate(200 0 0)' /%3E%3Cuse href='%23z' transform='scale(.5) rotate(250 0 0)' /%3E%3C/g%3E%3Cg id='z' transform='rotate(74.25 0 0)'%3E%3Cg transform='rotate(103.5 0 0)'%3E%3Cuse href='%23b'/%3E%3Cuse href='%23b' transform='scale(1.2) rotate(90 0 0)' /%3E%3Cuse href='%23b' transform='scale(1.4) rotate(60 0 0)' /%3E%3Cuse href='%23e' transform='scale(1.6) rotate(120 0 0)' /%3E%3Cuse href='%23e' transform='scale(1.8) rotate(30 0 0)' /%3E%3C/g%3E%3C/g%3E%3Cg id='y' transform='rotate(237.6 0 0)'%3E%3Cg transform='rotate(62.1 0 0)'%3E%3Cuse href='%23e' transform='scale(1.1) rotate(20 0 0)' /%3E%3Cuse href='%23g' transform='scale(1.3) rotate(-40 0 0)' /%3E%3Cuse href='%23g' transform='scale(1.5) rotate(60 0 0)' /%3E%3Cuse href='%23h' transform='scale(1.7) rotate(-80 0 0)' /%3E%3Cuse href='%23j' transform='scale(1.9) rotate(100 0 0)' /%3E%3C/g%3E%3C/g%3E%3Cg transform='rotate(-124.2 0 0)'%3E%3Cg transform='rotate(-74.25 0 0)'%3E%3Cg transform='rotate(-316.8 0 0)'%3E%3Cuse href='%23h' transform='scale(2) rotate(60 0 0)'/%3E%3Cuse href='%23j' transform='scale(2.1) rotate(120 0 0)'/%3E%3Cuse href='%23j' transform='scale(2.3) rotate(180 0 0)'/%3E%3Cuse href='%23h' transform='scale(2.4) rotate(240 0 0)'/%3E%3Cuse href='%23j' transform='scale(2.5) rotate(300 0 0)'/%3E%3C/g%3E%3Cuse href='%23y' transform='scale(2) rotate(180 0 0)' /%3E%3Cuse href='%23j' transform='scale(2.7)'/%3E%3Cuse href='%23j' transform='scale(2.8) rotate(45 0 0)'/%3E%3Cuse href='%23j' transform='scale(2.9) rotate(90 0 0)'/%3E%3Cuse href='%23k' transform='scale(3.1) rotate(135 0 0)'/%3E%3Cuse href='%23k' transform='scale(3.2) rotate(180 0 0)'/%3E%3C/g%3E%3Cuse href='%23k' transform='scale(3.3) rotate(225 0 0)'/%3E%3Cuse href='%23k' transform='scale(3.5) rotate(270 0 0)'/%3E%3Cuse href='%23k' transform='scale(3.6) rotate(315 0 0)'/%3E%3Cuse href='%23k' transform='scale(3.7)'/%3E%3Cuse href='%23k' transform='scale(3.9) rotate(75 0 0)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#blacksmithing-profession-slide{
+    background-color: #858585;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Cpath fill='none' stroke-width='25.7' id='a' d='M0-478l-413.96 717h827.92L0-478l-413.96 717h827.92z'/%3E%3C/defs%3E%3Cg style='transform-origin:center'%3E%3Cg transform='rotate(49.2 0 0)' style='transform-origin:center'%3E%3Cg transform='rotate(-107.2 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%2317D7FB' href='%23a' transform='rotate(-53.6 0 0) scale(0.464)'/%3E%3Cuse stroke='%2316d2f3' href='%23a' transform='rotate(-46.9 0 0) scale(0.531)'/%3E%3Cuse stroke='%2316ccec' href='%23a' transform='rotate(-40.2 0 0) scale(0.598)'/%3E%3Cuse stroke='%2315c7e4' href='%23a' transform='rotate(-33.5 0 0) scale(0.665)'/%3E%3Cuse stroke='%2314c2dd' href='%23a' transform='rotate(-26.8 0 0) scale(0.732)'/%3E%3Cuse stroke='%2313bcd5' href='%23a' transform='rotate(-20.1 0 0) scale(0.799)'/%3E%3Cuse stroke='%2313b7ce' href='%23a' transform='rotate(-13.4 0 0) scale(0.866)'/%3E%3Cuse stroke='%2312b2c6' href='%23a' transform='rotate(-6.7 0 0) scale(0.933)'/%3E%3Cuse stroke='%2311acbe' href='%23a' transform=''/%3E%3Cuse stroke='%2311a7b7' href='%23a' transform='rotate(6.7 0 0) scale(1.067)'/%3E%3Cuse stroke='%2310a2af' href='%23a' transform='rotate(13.4 0 0) scale(1.134)'/%3E%3Cuse stroke='%230f9ca8' href='%23a' transform='rotate(20.1 0 0) scale(1.201)'/%3E%3Cuse stroke='%230f97a0' href='%23a' transform='rotate(26.8 0 0) scale(1.268)'/%3E%3Cuse stroke='%230e9298' href='%23a' transform='rotate(33.5 0 0) scale(1.335)'/%3E%3Cuse stroke='%230d8c91' href='%23a' transform='rotate(40.2 0 0) scale(1.402)'/%3E%3Cuse stroke='%230c8789' href='%23a' transform='rotate(46.9 0 0) scale(1.469)'/%3E%3Cuse stroke='%230c8282' href='%23a' transform='rotate(53.6 0 0) scale(1.536)'/%3E%3Cuse stroke='%230b7c7a' href='%23a' transform='rotate(60.3 0 0) scale(1.603)'/%3E%3Cuse stroke='%230a7773' href='%23a' transform='rotate(67 0 0) scale(1.67)'/%3E%3Cuse stroke='%230a726b' href='%23a' transform='rotate(73.7 0 0) scale(1.737)'/%3E%3Cuse stroke='%23096c63' href='%23a' transform='rotate(80.4 0 0) scale(1.804)'/%3E%3Cuse stroke='%2308675c' href='%23a' transform='rotate(87.1 0 0) scale(1.871)'/%3E%3Cuse stroke='%23076254' href='%23a' transform='rotate(93.8 0 0) scale(1.938)'/%3E%3Cuse stroke='%23075c4d' href='%23a' transform='rotate(100.5 0 0) scale(2.005)'/%3E%3Cuse stroke='%23065745' href='%23a' transform='rotate(107.2 0 0) scale(2.072)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+#leatherworking-profession-slide{
+    background-color: #1D6B75;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect fill='none' stroke-width='11' id='a' x='-400' y='-300' width='800' height='600'/%3E%3C/defs%3E%3Cg transform='scale(0.586)' style='transform-origin:center'%3E%3Cg transform='rotate(180 0 0)' style='transform-origin:center'%3E%3Cg transform='rotate(-139.2 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%23A9B737' href='%23a' transform='rotate(8.7 0 0) scale(1.087)'/%3E%3Cuse stroke='%239fac34' href='%23a' transform='rotate(17.4 0 0) scale(1.174)'/%3E%3Cuse stroke='%2394a032' href='%23a' transform='rotate(26.1 0 0) scale(1.261)'/%3E%3Cuse stroke='%238a952f' href='%23a' transform='rotate(34.8 0 0) scale(1.348)'/%3E%3Cuse stroke='%23808a2c' href='%23a' transform='rotate(43.5 0 0) scale(1.435)'/%3E%3Cuse stroke='%23767e2a' href='%23a' transform='rotate(52.2 0 0) scale(1.522)'/%3E%3Cuse stroke='%236b7327' href='%23a' transform='rotate(60.9 0 0) scale(1.609)'/%3E%3Cuse stroke='%23616824' href='%23a' transform='rotate(69.6 0 0) scale(1.696)'/%3E%3Cuse stroke='%23575c22' href='%23a' transform='rotate(78.3 0 0) scale(1.783)'/%3E%3Cuse stroke='%234d511f' href='%23a' transform='rotate(87 0 0) scale(1.87)'/%3E%3Cuse stroke='%2342461c' href='%23a' transform='rotate(95.7 0 0) scale(1.957)'/%3E%3Cuse stroke='%23383a1a' href='%23a' transform='rotate(104.4 0 0) scale(2.044)'/%3E%3Cuse stroke='%232e2f17' href='%23a' transform='rotate(113.1 0 0) scale(2.131)'/%3E%3Cuse stroke='%23242414' href='%23a' transform='rotate(121.8 0 0) scale(2.218)'/%3E%3Cuse stroke='%23191812' href='%23a' transform='rotate(130.5 0 0) scale(2.305)'/%3E%3Cuse stroke='%230F0D0F' href='%23a' transform='rotate(139.2 0 0) scale(2.392)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+#jewellery-profession-slide{
+    background-color: #2E0A26;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Cellipse fill='none' stroke-width='20.5' id='a' rx='600' ry='450'/%3E%3C/defs%3E%3Cg transform='scale(0.586)' style='transform-origin:center'%3E%3Cg transform='rotate(180 0 0)' style='transform-origin:center'%3E%3Cg transform='rotate(-160 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%23A4049C' href='%23a' transform='rotate(-60 0 0) scale(0.4)'/%3E%3Cuse stroke='%23a10395' href='%23a' transform='rotate(-50 0 0) scale(0.5)'/%3E%3Cuse stroke='%239d038f' href='%23a' transform='rotate(-40 0 0) scale(0.6)'/%3E%3Cuse stroke='%23990388' href='%23a' transform='rotate(-30 0 0) scale(0.7)'/%3E%3Cuse stroke='%23950382' href='%23a' transform='rotate(-20 0 0) scale(0.8)'/%3E%3Cuse stroke='%2391047c' href='%23a' transform='rotate(-10 0 0) scale(0.9)'/%3E%3Cuse stroke='%238d0576' href='%23a'/%3E%3Cuse stroke='%23890670' href='%23a' transform='rotate(10 0 0) scale(1.1)'/%3E%3Cuse stroke='%2385076a' href='%23a' transform='rotate(20 0 0) scale(1.2)'/%3E%3Cuse stroke='%23810965' href='%23a' transform='rotate(30 0 0) scale(1.3)'/%3E%3Cuse stroke='%237c0a5f' href='%23a' transform='rotate(40 0 0) scale(1.4)'/%3E%3Cuse stroke='%23780c5a' href='%23a' transform='rotate(50 0 0) scale(1.5)'/%3E%3Cuse stroke='%23730d55' href='%23a' transform='rotate(60 0 0) scale(1.6)'/%3E%3Cuse stroke='%236e0e50' href='%23a' transform='rotate(70 0 0) scale(1.7)'/%3E%3Cuse stroke='%236a104b' href='%23a' transform='rotate(80 0 0) scale(1.8)'/%3E%3Cuse stroke='%23651147' href='%23a' transform='rotate(90 0 0) scale(1.9)'/%3E%3Cuse stroke='%23601142' href='%23a' transform='rotate(100 0 0) scale(2)'/%3E%3Cuse stroke='%235b123e' href='%23a' transform='rotate(110 0 0) scale(2.1)'/%3E%3Cuse stroke='%2357133a' href='%23a' transform='rotate(120 0 0) scale(2.2)'/%3E%3Cuse stroke='%23521336' href='%23a' transform='rotate(130 0 0) scale(2.3)'/%3E%3Cuse stroke='%234d1432' href='%23a' transform='rotate(140 0 0) scale(2.4)'/%3E%3Cuse stroke='%2348142f' href='%23a' transform='rotate(150 0 0) scale(2.5)'/%3E%3Cuse stroke='%2343142B' href='%23a' transform='rotate(160 0 0) scale(2.6)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+#alchemy-profession-slide{
+    background-color: #26610a;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Cpath fill='none' stroke-width='11' id='a' d='M0-478l-413.96 717h827.92L0-478l-413.96 717h827.92z'/%3E%3C/defs%3E%3Cg style='transform-origin:center'%3E%3Cg transform='rotate(55.2 0 0)' style='transform-origin:center'%3E%3Cg transform='rotate(-160 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%23030E04' href='%23a' transform='rotate(-80 0 0) scale(0.2)'/%3E%3Cuse stroke='%23040f06' href='%23a' transform='rotate(-70 0 0) scale(0.3)'/%3E%3Cuse stroke='%23051007' href='%23a' transform='rotate(-60 0 0) scale(0.4)'/%3E%3Cuse stroke='%23061009' href='%23a' transform='rotate(-50 0 0) scale(0.5)'/%3E%3Cuse stroke='%2307110b' href='%23a' transform='rotate(-40 0 0) scale(0.6)'/%3E%3Cuse stroke='%2308120c' href='%23a' transform='rotate(-30 0 0) scale(0.7)'/%3E%3Cuse stroke='%2309120d' href='%23a' transform='rotate(-20 0 0) scale(0.8)'/%3E%3Cuse stroke='%230a130f' href='%23a' transform='rotate(-10 0 0) scale(0.9)'/%3E%3Cuse stroke='%230b1410' href='%23a' transform=''/%3E%3Cuse stroke='%230c1411' href='%23a' transform='rotate(10 0 0) scale(1.1)'/%3E%3Cuse stroke='%230d1512' href='%23a' transform='rotate(20 0 0) scale(1.2)'/%3E%3Cuse stroke='%230e1513' href='%23a' transform='rotate(30 0 0) scale(1.3)'/%3E%3Cuse stroke='%230f1614' href='%23a' transform='rotate(40 0 0) scale(1.4)'/%3E%3Cuse stroke='%23101715' href='%23a' transform='rotate(50 0 0) scale(1.5)'/%3E%3Cuse stroke='%23111715' href='%23a' transform='rotate(60 0 0) scale(1.6)'/%3E%3Cuse stroke='%23121816' href='%23a' transform='rotate(70 0 0) scale(1.7)'/%3E%3Cuse stroke='%23121817' href='%23a' transform='rotate(80 0 0) scale(1.8)'/%3E%3Cuse stroke='%23131918' href='%23a' transform='rotate(90 0 0) scale(1.9)'/%3E%3Cuse stroke='%23141918' href='%23a' transform='rotate(100 0 0) scale(2)'/%3E%3Cuse stroke='%23151919' href='%23a' transform='rotate(110 0 0) scale(2.1)'/%3E%3Cuse stroke='%23161a1a' href='%23a' transform='rotate(120 0 0) scale(2.2)'/%3E%3Cuse stroke='%23171a1a' href='%23a' transform='rotate(130 0 0) scale(2.3)'/%3E%3Cuse stroke='%23171b1b' href='%23a' transform='rotate(140 0 0) scale(2.4)'/%3E%3Cuse stroke='%23181b1b' href='%23a' transform='rotate(150 0 0) scale(2.5)'/%3E%3Cuse stroke='%23191C1C' href='%23a' transform='rotate(160 0 0) scale(2.6)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+
+}
+   /* background by SVGBackgrounds.com */

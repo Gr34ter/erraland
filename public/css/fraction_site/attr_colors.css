@@ -1,0 +1,55 @@
+.physicalDamage span{
+    color: var(--main-AD-color);
+}
+.piercingDamage span{
+    color: var(--main-piercing-color);
+}
+.abilityPower span{
+    color: var(--main-AP-color);
+}
+.divine span{
+    color: var(--main-divine-color);
+}
+.glory span{
+    color: var(--main-glory-color);
+}
+.fire span{
+    color: var(--main-fire-color);
+}
+.water span{
+    color: var(--main-water-color);
+}
+.air span{
+    color: var(--main-air-color);
+}
+.earth span{
+    color: var(--main-earth-color);
+}
+.criticalChance span,
+.criticalDamage span{
+    color: var(--main-critical-color);
+}
+.stalking span{
+    color: var(--main-stalking-color);
+}
+.bleedingDamage span{
+    color: var(--main-bleeding-color);
+}
+.vampirism span{
+    color: var(--main-vampirism-color);
+}
+.diabolism span{
+    color: var(--main-diabolism-color);
+}
+.hypnoPower span{
+    color: var(--main-hypno-color);
+}
+.mesmerizing span{
+    color: var(--main-mesmer-color);
+}
+.darkPower span{
+    color: var(--main-darkpower-color);
+}
+.forestMagic span{
+    color: var(--main-forestmagic-color);
+}

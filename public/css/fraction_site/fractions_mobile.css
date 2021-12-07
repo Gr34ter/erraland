@@ -1,0 +1,156 @@
+@media only screen and (max-width: 640px) {
+    .site-descr{
+        font-size: .8rem;
+        width: 100%;
+    }
+    .champion{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .flex-header{
+        width: 100%;
+        padding: 5px;
+    }
+    .fraction-description{
+        text-align: right;
+        font-size: .8rem;
+    }
+    .fractions{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .fraction{
+        width: 30%;
+        margin: .2rem;
+    }
+    .fraction h3{
+        font-size: .8rem;
+    }
+    footer{
+        font-size: .8rem;
+        padding: 0 5px;
+    }
+    .submit-btn:disabled{
+        height: 60%;
+        font-size: .7rem;
+    }
+}
+@media only screen and (max-width: 500px){
+    body{
+        background-image: none;
+    }
+    .fractions-container{
+        height: 100%;
+        justify-content: stretch;
+    }
+    header{
+        min-height: 30%;
+        padding-bottom: 1rem;
+    }
+    main{
+        min-height: 63%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    .fractions{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: stretch;
+    }
+    .site-description-container{
+        border: none;
+    }
+    .descr-attention{
+        display: none;
+    }
+    .fraction{
+        margin: 0;
+        min-height: 16%;
+        min-width: 100%;
+        flex-direction: row;
+        border: none;
+        border-radius: 0;
+    }
+    .fraction img{
+        width: 50px;
+        height: 50px;
+    }
+    .fraction h3{
+        height: 100%;
+        min-width: 70%;
+    }
+    .header-fraction-name{
+        font-size: .8rem; 
+    }
+    .fraction-description{
+        text-align: right;
+        font-size: .65rem;
+    }
+    .flex-header{
+        height: 100%;
+    }
+    .points-left-container{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .points-left-container > * {
+        font-size: .7rem;
+
+    }
+    .attribute-row{
+        width: 100%;
+        padding: 0 10px 0 10px;
+    }
+    .button-attrdown,
+    .button-attrup{
+        min-width: 15%;
+    }
+    .fraction-points{
+        width: 20%;
+    }
+    .name-container{
+        margin-right: 5px;
+        min-width: 20%;
+    }
+    .name-container label{
+        font-size: .8rem;
+    }
+    .submit-container{
+        padding: 0 10px;
+    }
+    .submit-btn:disabled{
+        max-height: 30px;
+    }
+    .submit-btn{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        max-height: 30px;
+        min-width: 30%;
+        letter-spacing: 3px;
+    }
+    /* .submit-btn:hover {
+        background-color: var(--main-pastel-sea-color);
+    } */
+    .fraction-points{
+        align-items: center;
+    }
+    .attribute-description-container{
+        width: 100%;
+        border: none;
+    }
+    .attribute-x-toggler{
+        height: 2.2rem;
+        width: 2.2rem;
+    }
+}

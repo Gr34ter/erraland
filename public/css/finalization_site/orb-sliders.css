@@ -1,0 +1,175 @@
+.orb-slider{
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 4rem;
+    left: 3rem;
+    right: 3rem;
+    bottom: 2rem;
+    /* background-color: var(--main-dark); */
+    border: 2px solid #fff;
+    border-radius: 5px;
+    /* width: 100%; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    transform: scale(0);
+    transition: all 0.4s ease;
+    opacity: 1;
+    z-index: 1;
+
+    background-image: linear-gradient(
+        to bottom right, #016961 0%, #027a6a 40%, #049b7a 100%
+    );
+    background-size: 200% 200%;
+    animation: movingGradient 5s linear infinite alternate;
+}
+.orb-slide{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#luck-orb-slide{
+    width: 45%;
+}
+#knowledge-orb-slide{
+    width: 45%;
+}
+.orb-img{
+    position: relative;
+    top: -600px;
+}
+.orb-img-container{
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: .75rem; 
+}
+.img-animation{
+    position: relative;
+    animation: mymove 2500ms;
+    animation-fill-mode: forwards;
+}
+.orb-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    /* background-color: var(--main-light); */
+    height: 55%;
+    border-radius: 6px;
+}
+.orb-header{
+    justify-self: flex-start;
+    padding: .5rem;
+    height:20%; 
+    color: var(--main-light);
+    background-color: var(--main-background-color-superdarker-transparent);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.orb-text{
+    background-color: var(--main-light);
+    font-size: 1.1rem;
+    height: 60%;
+    padding: .5rem;
+}
+.orb-btn{
+    border: none;
+    height: 1rem;
+    width: 100%;
+    min-height: 20%;
+    align-self: center;
+    padding: .2rem;
+    background-color: var(--main-pastel-violet-color);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 1.5rem;
+    color: var(--main-light);
+    transition: all .2s ease;
+}
+.orb-btn:hover{
+    cursor: pointer;
+    letter-spacing: 4px;
+    background-color: var(--main-pastel-sea-color);
+    color: var(--main-light);
+    
+}
+.orb-btn:hover + .orb-content{
+    border: 1px solid gold;
+}
+/* X BUTTON */
+.orb-x-toggler{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border: 2px solid #fff;
+    background-color: rgba(250, 0, 137, 0.849);
+    border-radius: 3px;
+    height: 3rem;
+    width: 3rem;
+    padding: 0.4rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transform: scale(0);
+    transition: all 0.5s ease;
+    visibility: hidden;
+}
+.orb-x-toggler > div {
+    position: relative;
+    background-color: #fff;
+    height: 2px;
+    width: 100%;
+    transform: rotate(45deg);
+    transition: all 0.2s ease;
+}
+.orb-x-toggler > div::before{
+    content: '';
+    position: absolute;
+    background-color:  #fff;
+    height: 2px;
+    width: 100%;
+    transform: rotate(90deg);
+    transition: all 0.2s ease;
+}
+.orb-x-toggler:hover .orb-x-lines{
+    transform: rotate(135deg);
+}
+.show-slider,
+.show-toggler{
+    visibility: visible;
+    transform: scale(1);
+}
+.hide-slider,
+.hide-toggler{
+    transform: scale(0);
+    visibility: hidden;
+    transition-duration: 0.2s;
+}
+@keyframes mymove {
+    0% {top: -1400px;}
+    10% {top: 0px; transition: ease;}
+    35% {top: -30px;}
+    45% {top: 0;}
+    65% {top: -15px;}
+    75% {top: 0;}
+    82% {top: -10px;}
+    90% {top: 0;}
+    94% {top: -5px;}
+    99% {top: 0;}
+    100% {top: 0;}
+}
+@keyframes movingGradient {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}

@@ -1,0 +1,331 @@
+@media only screen and (max-width: 1000px){
+    .prof-text-container{
+        display: none;
+    }
+    .prof-arrows{
+        display: none;
+    }
+    .profession-header{
+        width: 80%;
+        /* min-width: 50%; */
+        justify-content: center;
+    }
+    .prof-dots{
+        display: flex;
+        width: 20%;
+        height: 100%;
+        font-size: 1.7rem;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        background-color: var(--main-background-color-darker-transparent);
+    }
+    .prof-dots:hover{
+        cursor: pointer;
+        background-color: transparent;
+    }
+    .prof-dots i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .prof-btn{
+        display: none;
+    }
+    .profession-x-toggler{
+        top: 0;
+        left: 0;
+    }
+    
+    .prof-details-media{
+        display: none;
+    }
+    .media-1000-active{
+        font-size: 1.7rem;
+        padding: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--main-light);
+        height: 100%;
+        width: 100%;
+        transition: all 0.18s ease-in;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 4;
+        transform: scale(1);
+    }
+    .back-btn-media,
+    .back-btn-trait-media{
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        display: flex;
+        border-radius: 50%;
+    }
+    .back-btn-media:hover,
+    .back-btn-trait-media:hover{
+        cursor: pointer;
+        
+    }
+
+    .back-btn-media i,
+    .back-btn-trait-media i{
+        font-size: 2rem;
+        color: var(--main-pastel-violet-color);
+        transform: rotateZ(10deg);
+        transition: all 0.2s ease-in-out;
+    }
+    .back-btn-media i:hover,
+    .back-btn-trait-media i:hover{
+        cursor: pointer;
+        transform: rotateZ(-20deg);
+        color: var(--main-pastel-sea-color);
+    } 
+}
+@media only screen and (max-width: 900px){
+    .trait-slider{
+        width: 100%;
+        left: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0;
+        padding: 0;
+        height: 90%;
+        border-radius: 0;
+        border: none;
+    }
+    .trait-slide{
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+
+    }
+    .trait-header,
+    .trait-stats,
+    .trait-btn{
+        height: 100%;
+        border-radius: 0;
+    }
+    .wop-trait-stats{
+        border: none;
+    }
+    .trait-header{
+        min-width: 30%
+    }
+    .trait-stats{
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 40%;
+    }
+    .trait-stats h5{
+        margin: 5px;
+    }
+    .trait-btn{
+        width: 25%;
+    }
+    .trait-btn:hover{
+        letter-spacing: 0;
+    }
+    .trait-text{
+        display: none;
+    }
+    .trait-x-toggler{
+        width: 2rem;
+        height: 2rem;
+    }
+}
+@media  only screen and (max-width: 780px) {
+    .profession-header{
+        justify-content: flex-end;
+    }
+    .trait-btn-header{
+        display: none;
+    }
+    .trait-btn .trait-apply-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.9rem;
+    }
+}
+@media only screen and (max-width: 700px){
+    .content-btn{
+        flex-wrap: nowrap;
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .rune-slide{
+        justify-content: space-between;
+    }
+    .img-container{
+        height: 60%;
+    }
+    .img-container img{
+        width: 150px;
+        height: 150px;
+    }
+    .rune-buttons button#next-rune{
+        right: 1rem;
+    }
+    .rune-buttons button#prev-rune{
+        left: 1rem;
+    }
+    .slide-wrapper-runes,
+    .profession-slider,
+    .orb-slider{
+        width: 100%;
+        left: 0;
+        height: 90%;
+        border: none;
+        border-radius: 0;
+    }
+    .orb-slider{
+        flex-direction: column;
+        padding: .5rem;
+    }
+    .orb-slide{
+        flex-direction: row;
+    }
+    .orb-img-container{
+        width: 25%;
+    }
+    .orb-img-container img{
+        width: 100px;
+        height: 100px;
+    }
+    #luck-orb-slide,
+    #knowledge-orb-slide{
+        width: 100%;
+    }
+    .orb-x-toggler{
+        height: 2rem;
+        width: 2rem;
+        top: 5px;
+        left: 5px;
+    }
+    .trait-btn{
+        font-size: 1rem;
+    }
+    .trait-slide{
+        height: 100%;
+        margin: 0;
+    }
+    .content-btn{
+        min-height: 40%;
+    }
+    .confirm-btn{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 480px){
+    .orb-content{
+        height: 75%;
+    }
+    .orb-img-container{
+        display: none;
+    }
+    .orb-header{
+        padding-bottom: 1.5rem;
+    }
+    .orb-img-container img{
+        width: 80px;
+        height: 80px;
+    }
+    .trait-header{
+        font-size: 1.3rem;
+    }
+    .rune-text-content{
+        width: 100%;
+    }
+    .rune-btn{
+        width: 100%;
+    }
+    .content-btn{
+        width: 80%;
+        min-height: 25%;
+        justify-content: flex-start;
+    }
+    .content-btn-wrapper{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .choice-content-wrapper{
+        padding-top: 2rem;
+    }
+    .progress{
+        margin-top: 2rem;
+    }
+    .profession-x-toggler,
+    .orb-x-toggler,
+    .rune-x-toggler{
+        height: 2rem;
+        width: 2rem;
+    }
+    .trait-btn{
+        display: none;
+    }
+    .trait-dots{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .show-trait-details-media{
+        background-color: var(--main-light);
+        color: var(--main-dark);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8rem;
+        transform: scale(1);
+    }
+    .trait-text-media{
+        width: 85%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .trait-header{
+        font-size: .9rem;
+    }
+}
+@media only screen and (max-width:340px) {
+    .slide-wrapper-runes{
+        padding: 1.5rem .5rem 1.5rem .5rem;
+    }
+    .profession-header{
+        font-size: 0.8rem;
+    }
+    .prof-media-text,
+    .trait-text-media{
+        font-size: 1.3rem;
+    }
+    .img-container .rune-img{
+        width: 120px;
+        height: 120px;
+    }
+    .img-container{
+        max-height: 30%;
+    }
+    .rune-text-content{
+        height: 50%;
+    }
+    .rune-buttons button#next-rune,
+    .rune-buttons button#prev-rune{
+        top: 20%;
+        width: 40px;
+        height: 40px;
+    }
+}

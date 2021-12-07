@@ -1,0 +1,141 @@
+@media only screen and (max-width: 1000px) {
+    .champion-details{
+        width: 70%;
+    }
+    @media (max-width: 760px) {
+        .champion-details{
+            width: 100%;
+        }
+    }
+    @media (max-width: 660px) {
+        .trait-skills{
+            font-size: 1rem;
+        }
+        .bonus-details,
+        .orb-bonus-text-menu,
+        .trait-sentence-menu{
+            font-size: 1rem;
+        }
+        .rune-name-menu,
+        .orb-name-menu
+        {
+            font-size: .8rem
+        }
+    }
+    @media (max-width: 500px) {
+        .spec-attribute,
+        .basic-attribute{
+            font-size: .8rem;
+        }
+        .hp,
+        .mana{
+            font-size: 1rem;
+        }
+        .champion-details{
+            height: 100vh;
+            top: 13vh;
+        }
+        .attributes-container{
+            display: none;
+        }
+        .button-stats-container{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 25%;
+        }
+        .show-stats-media-btn{
+            height: 30%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            background-color: var(--main-pastel-sea-color);
+            transition: all .2s ease;
+        }
+        .show-stats-media-btn > i{
+            color: var(--main-pastel-violet-color);
+        }
+        .show-stats-media-btn:hover{
+            cursor: pointer;
+            background-color: var(--main-background-color-dark-transparent);
+            border: 1px solid var(--main-pastel-sea-color);
+        }
+        .attributes-container-media-active{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: absolute;
+            background-color: var(--main-pastel-sea-color);
+            top: 0;
+            left: 0;
+            height: 85%;
+            z-index: 6;
+
+        }
+        .attributes-special,
+        .attributes-basic{
+            width: 100%;
+            min-height: 40%;
+            color: #fff;
+            padding-top: 5px;
+            background-color: var(--main-background-color-darker-transparent);
+        }
+        .basic-attribute,
+        .spec-attribute{
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .basic-attribute-name{
+            align-items: center;
+            letter-spacing: 2px;
+        }
+        .basic-attribute h4,
+        .spec-attribute h4{
+            font-size: 1.1rem;
+        }
+        .spec-attribute-name{
+            width: 80%;
+            display: flex;
+            align-items: center;
+            font-size: .8rem;
+        }
+        .attr-special-header,
+        .attr-basic-header{
+            font-size: .8rem;
+            background-color: var(--main-background-color-darker-transparent);
+        }
+        .stats-back-btn{
+            align-self: center;
+            height: 8%;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--main-background-color-superdarker-transparent);
+            border: none;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: all .2s ease;
+            margin-top: .2rem;
+        }
+        .stats-back-btn:hover{
+            background-color: var(--main-pastel-violet-color);
+            cursor: pointer;
+        }
+    }
+    /* @media (max-width: 330px) {
+        
+    } */
+    
+}
